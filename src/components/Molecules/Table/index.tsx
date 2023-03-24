@@ -16,8 +16,6 @@ const Table = ({ marketCoins, loadMoreMarketCoins }: TTableProps) => {
     <Virtuoso
       totalCount={marketCoinsList.length}
       useWindowScroll
-      style={{ paddingTop: "140px" }}
-      className="h-screen"
       data={marketCoinsList}
       atBottomStateChange={() => loadMoreMarketCoins()}
       itemContent={(_index, market) => (

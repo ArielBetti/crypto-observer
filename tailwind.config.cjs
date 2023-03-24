@@ -3,6 +3,12 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      colors: {
+        'black-piano': {
+          1: '#120F13',
+          2: '#0B090C',
+        },
+      },
       keyframes: {
         fadeIn: {
           "0%, 100%": {

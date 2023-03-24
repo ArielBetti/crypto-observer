@@ -9,7 +9,7 @@ import { getMarketCoin } from '../services/getMarketCoin'
 // ::
 export const useGetMarketCoinQuery = (coin: string) => {
   return useQuery({
-    queryKey: ["market_coin", ENDPOINTS.marketCoin],
+    queryKey: [`market-coin-${coin}`],
     queryFn: () => getMarketCoin(coin.toLowerCase().trim()),
     refetchOnWindowFocus: false,
     enabled: !!coin,

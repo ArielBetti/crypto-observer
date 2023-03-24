@@ -4,7 +4,7 @@ import { useId } from "react";
 import type { TInput } from "./types";
 
 // ::
-const Input = ({ customLabel, label, ...rest }: TInput) => {
+const Input = ({ customLabel, label, complement, ...rest }: TInput) => {
   const inputId = useId();
 
   return (
@@ -19,12 +19,16 @@ const Input = ({ customLabel, label, ...rest }: TInput) => {
           {customLabel}
         </label>
       )}
-      <input
-        className="w-full placeholder:text-zinc-500 bg-zinc-800 p-2 rounded-md shadow-sm text-xl"
-        {...rest}
-        id={inputId}
-        name={inputId}
-      />
+      <div className="flex gap-2 items-center w-full">
+        <input
+          type="search"
+          className="w-full placeholder:text-zinc-500 bg-zinc-800 p-2 rounded-md shadow-sm text-xl"
+          {...rest}
+          id={inputId}
+          name={inputId}
+        />
+        {complement}
+      </div>
     </div>
   );
 };
